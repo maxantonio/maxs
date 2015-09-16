@@ -2,7 +2,7 @@ require "maxs/version"
 
 module Maxs
   # Your code goes here...
-  def saludos
+  def self.saludos
     "papiripao"
   end
 end

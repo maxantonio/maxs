@@ -4,14 +4,20 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'maxs/version'
 
 Gem::Specification.new do |spec|
-  s.name        = 'maxs'
-  s.version     = '0.0.1'
-  s.date        = '2015-09-15'
-  s.summary     = "Max Spreadsheets"
-  s.description = "A simple Spreadsheets gem "
-  s.authors     = ["Max Antonio"]
-  s.email       = 'i@maxantonio.com'
-  s.files       = ["lib/i.rb"]
-  s.homepage    = 'https://github.com/maxantonio/maxs'
-  s.license     = 'MIT'
+  spec.name          = "maxs"
+  spec.version       = Maxs::VERSION
+  spec.authors       = ["Max Antonio"]
+  spec.email         = ["i@maxantonio.com"]
+  spec.summary       = "Max Spreadsheets"
+  spec.description   = "Spreadsheets in max"
+  spec.homepage      = ""
+  spec.license       = "MIT"
+
+  spec.files         = `git ls-files -z`.split("\x0")
+  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
+  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.require_paths = ["lib"]
+
+  spec.add_development_dependency "bundler", "~> 1.7"
+  spec.add_development_dependency "rake", "~> 10.0"
 end
